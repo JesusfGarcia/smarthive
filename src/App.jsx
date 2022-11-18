@@ -1,29 +1,33 @@
 import React from "react";
-import Hive from "./assets/hive.jpeg";
-import Bee from "./assets/bee-png.png";
+
 import "./App.css";
+
+import Login from "./views/Login";
+import Registre from "./views/Registre";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA9Fg1TG7L0hClpFnsRRW_ps1Fn-2tghI0",
+  authDomain: "smarthive-cf25a.firebaseapp.com",
+  projectId: "smarthive-cf25a",
+  storageBucket: "smarthive-cf25a.appspot.com",
+  messagingSenderId: "220265270421",
+  appId: "1:220265270421:web:ba802dd312e01048239f9c",
+};
+
+export const app = initializeApp(firebaseConfig);
 
 function App() {
   return (
-    <div className="App">
-      <img className="backgroundimage" src={Hive} />
-      <div className="logo">
-        <img src={Bee} />
-        <span>SMART HIVE</span>
-      </div>
-
-      <div className="form">
-        <label htmlFor="email">Correo</label>
-        <input id="email" placeholder="ejemplo@gmail.com" />
-        <label htmlFor="password">Contraseña</label>
-        <input type="password" id="password" placeholder="8 caracteres" />
-        <button>Ingresar</button>
-      </div>
-      <div className="links">
-        <span>Crear Cuenta!</span>
-        <span>Olvidé la Contraseña</span>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/registre" element={<Registre />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
