@@ -8,6 +8,7 @@ import Registre from "./views/Registre";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { initializeApp } from "firebase/app";
+import Dashboard from "./views/Dashboard";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9Fg1TG7L0hClpFnsRRW_ps1Fn-2tghI0",
@@ -26,6 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/registre" element={<Registre />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

@@ -87,3 +87,124 @@ h2 {
   color: red;
   font-size: 18px;
 }
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 20px 10px;
+  background-color: #9e7e00;
+  color: white;
+  gap: 20px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  cursor: pointer;
+}
+
+.content {
+  height: 100%;
+  position: relative;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #7e4e29;
+  width: 200px;
+  height: 100%;
+  padding: 10px;
+  color: white;
+  gap: 10px;
+  transition: 0.5s ease all;
+  position: absolute;
+  left: 0px;
+}
+
+.hidden {
+  display: flex;
+  flex-direction: column;
+  background-color: #7e4e29;
+  width: 200px;
+  position: absolute;
+  height: 100%;
+  padding: 10px;
+  color: white;
+  gap: 10px;
+  box-sizing: border-box;
+  left: -200px;
+  transition: 0.5s ease all;
+}
+
+.side-item {
+  padding: 10px 20px;
+}
+
+.side-item:hover {
+  background-color: #7d5e46;
+  cursor: pointer;
+}
+
+.card {
+  padding: 10px 20px;
+  width: 400px;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  box-shadow: 3px 2px 6px 0px rgba(144, 110, 10, 0.75);
+  -webkit-box-shadow: 3px 2px 6px 0px rgba(144, 110, 10, 0.75);
+  -moz-box-shadow: 3px 2px 6px 0px rgba(144, 110, 10, 0.75);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.view-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+
+.card-title {
+  font-size: 20px;
+  letter-spacing: 2px;
+  background-color: rgba(144, 111, 10, 0.596);
+  color: white;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.datos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.big {
+  font-size: 100px;
+}
+
+
+.cuantity {
+  font-size: 45px;
+}
+
+.blue {
+  color: rgb(62, 179, 195);
+}

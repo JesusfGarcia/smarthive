@@ -21,9 +21,8 @@ export default function Login() {
       setError(false);
       const auth = getAuth();
       const response = await signInWithEmailAndPassword(auth, email, password);
-  
-      localStorage.setItem("uid", response.user.uid)
-     
+
+      localStorage.setItem("uid", response.user.uid);
 
       setIsLoading(false);
     } catch (error) {
