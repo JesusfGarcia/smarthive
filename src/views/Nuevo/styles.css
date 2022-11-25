@@ -1,0 +1,12 @@
+.buttonAgregar {
+    background-color: #7d5e46;
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.buttonAgregar:hover {
+    background-color: #674d3a;
+}

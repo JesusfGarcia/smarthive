@@ -8,6 +8,7 @@ import Registre from "./views/Registre";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 import Dashboard from "./views/Dashboard";
 
 const firebaseConfig = {
@@ -17,9 +18,12 @@ const firebaseConfig = {
   storageBucket: "smarthive-cf25a.appspot.com",
   messagingSenderId: "220265270421",
   appId: "1:220265270421:web:ba802dd312e01048239f9c",
+  databaseURL: "https://smarthive-cf25a-default-rtdb.firebaseio.com/",
 };
 
 export const app = initializeApp(firebaseConfig);
+
+export const database = getDatabase(app);
 
 function App() {
   return (

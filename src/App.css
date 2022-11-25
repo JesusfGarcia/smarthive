@@ -39,6 +39,20 @@
   min-width: 500px;
 }
 
+
+.secondaryInput {
+  padding: 15px 10px;
+  border-radius: 8px;
+  border: 1px solid #7d5e46;
+  outline: none;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.secondaryLabel {
+  color: #7d5e46;
+  font-weight: bold;
+}
 .myInput {
   padding: 15px 10px;
   border-radius: 8px;
