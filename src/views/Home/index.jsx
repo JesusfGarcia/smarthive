@@ -5,28 +5,9 @@ const tempMin = 35;
 const humMax = 65;
 const humMin = 40;
 
-const colmenas = [
-  {
-    temp: "35",
-    hume: "45",
-    name: "colmena 1",
-  },
-  {
-    temp: "36",
-    hume: "70",
-    name: "colmena 2",
-  },
-  {
-    temp: "39",
-    hume: "50",
-    name: "colmena 3",
-  },
-  {
-    temp: "36",
-    hume: "30",
-    name: "colmena 4",
-  },
-];
+import { getDatabase, ref, onValue } from "firebase/database";
+
+import { getAuth } from "firebase/auth";
 
 const getLevel = (hume) => {
   if (hume >= humMax) return "high";
@@ -41,6 +22,29 @@ const getTempColor = (temp) => {
 };
 
 export default function Home() {
+  const [colmenas, setColmenas] = React.useState([]);
+  const db = getDatabase();
+  const auth = getAuth();
+  const user = auth.currentUser;
+  const hiveRef = ref(db, `${user.uid}`);
+
+  React.useEffect(() => {
+    onValue(hiveRef, (snapshot) => {
+      const data = snapshot.val();
+      const hives = [];
+      for (let property in data) {
+        hives.push({
+          name: property,
+          hume: data[property].hume,
+          temp: data[property].temp,
+        });
+      }
+
+      console.log(hives);
+      setColmenas(hives);
+    });
+  }, []);
+
   return (
     <div className="view-container">
       <h1>Mis Colmenas</h1>

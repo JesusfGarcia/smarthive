@@ -22,6 +22,7 @@ export default function Nuevo() {
       setLoading(true);
       const db = getDatabase();
       const user = auth.currentUser;
+
       await set(ref(db, `${user.uid}/${name}`), {
         temp: 0,
         hume: 0,
